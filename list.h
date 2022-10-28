@@ -5,8 +5,6 @@
 #ifndef PROJETCGENERATEURDEPHRASEV2_LIST_H
 #define PROJETCGENERATEURDEPHRASEV2_LIST_H
 #include "three.h"
-#include "list.h"
-
 
 
 
