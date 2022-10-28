@@ -5,14 +5,15 @@
 #ifndef PROJETCGENERATEURDEPHRASEV2_LIST_H
 #define PROJETCGENERATEURDEPHRASEV2_LIST_H
 #include "three.h"
+typedef struct s_node* node;
 
 
-
-typedef struct cell{
+typedef struct s_cell{
     node data;
-    struct cell* next;
-}cell;
+    struct s_cell* next;
+}s_cell;
 
+typedef s_cell* cell;
 
 typedef struct slist{
     cell head;

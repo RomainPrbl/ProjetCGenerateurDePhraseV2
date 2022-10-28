@@ -7,19 +7,19 @@
 #include "list.h"
 
 
-typedef struct snode{
+typedef struct s_node{
     char data;
-    list children
-}snode;
+    list children;
+}s_node;
 
-typedef snode* node;
-
-
+typedef s_node* node;
 
 
+
+//faire struct de données pour formes fléchées
 
 typedef struct three{
-    node root;
+    node[26] root;
 }three;
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H
