@@ -4,6 +4,7 @@
 
 #include "displayTxt.h"
 
+
 void displayLines(char *filename)
 {
     FILE *dicofile = fopen(filename, "rt");
@@ -20,5 +21,5 @@ void displayLines(char *filename)
 
     fclose(dicofile);
 
-    return;
+    //return;
 }

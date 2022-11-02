@@ -5,11 +5,13 @@
 #ifndef PROJETCGENERATEURDEPHRASEV2_THREE_H
 #define PROJETCGENERATEURDEPHRASEV2_THREE_H
 #include "list.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct s_node{
     char data;
-    list children;
+    struct slist* children;
+    //pointeurs de formes fléchis
 }s_node;
 
 typedef s_node* node;
@@ -19,7 +21,11 @@ typedef s_node* node;
 //faire struct de données pour formes fléchées
 
 typedef struct three{
-    node[26] root;
+    node root[26];
 }three;
+
+
+three* createInitialThree();
+
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H

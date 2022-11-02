@@ -1,17 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "display/displayTxt.h"
+#include "three.h"
 int main() {
-    char data[20];
-    FILE* dictionnaire;
-    dictionnaire = fopen("dictionnaire_non_accentue.txt","r");
-
-    if(dictionnaire == NULL){
-        printf("Le fichier ne peux pas être ouvert");
-    }else{
-        fscanf(dictionnaire,"%s",&data);
-        fclose(dictionnaire);
-    }
-
+    displayLines("D:\\generateurdemot\\ProjetCGenerateurDePhraseV2\\dictionnaire_non_accentue.txt");
+    three *ThreeForAllLetter=createInitialThree(); //Creer un three avec un tableau de toutes les lettres en root
     return 0;
 }
