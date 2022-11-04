@@ -3,7 +3,8 @@
 #include "display/displayTxt.h"
 #include "three.h"
 int main() {
-    displayLines("D:\\generateurdemot\\ProjetCGenerateurDePhraseV2\\dictionnaire_non_accentue.txt");
     three *ThreeForAllLetter=createInitialThree(); //Creer un three avec un tableau de toutes les lettres en root
+    listString test = getBasesFormes("D:\\generateurdemot\\ProjetCGenerateurDePhraseV2\\dictionnaire_non_accentue.txt");
+    printf("%s",test->head);
     return 0;
 }

@@ -6,7 +6,8 @@
 #define PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "../list.h"
+#include <string.h>
 void displayLines(char *filename);
-
+listString getBasesFormes(char *filename);
 #endif //PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H

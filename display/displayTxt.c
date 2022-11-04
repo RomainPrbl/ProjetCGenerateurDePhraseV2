@@ -23,3 +23,25 @@ void displayLines(char *filename)
 
     //return;
 }
+
+listString getBasesFormes(char *filename)
+{
+    listString BasesFormes=malloc(sizeof (listString));
+    BasesFormes->head =NULL;
+    FILE *dicofile = fopen(filename, "rt");
+    char flechie[35];
+    char base[35];
+    char formes[35];
+    if (dicofile != NULL)
+    {
+        while (fscanf(dicofile,"%s\t%s\t%s",flechie, base, formes) != EOF)
+        {
+            if (checkIfInList(BasesFormes,base)==0){
+                addInListString(BasesFormes,base);
+
+            }
+        }
+    }
+    fclose(dicofile);
+    return BasesFormes;
+}
