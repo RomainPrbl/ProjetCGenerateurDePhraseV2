@@ -32,4 +32,5 @@ typedef slistString* listString;
 
 void addInListString(listString L,char* string);
 int checkIfInList(listString L,char* string);
+void displayStringList(listString L);
 #endif //PROJETCGENERATEURDEPHRASEV2_LIST_H

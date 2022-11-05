@@ -36,9 +36,8 @@ listString getBasesFormes(char *filename)
     {
         while (fscanf(dicofile,"%s\t%s\t%s",flechie, base, formes) != EOF)
         {
-            if (checkIfInList(BasesFormes,base)==0){
+            if (!checkIfInList(BasesFormes,base)){
                 addInListString(BasesFormes,base);
-
             }
         }
     }
