@@ -10,4 +10,5 @@
 #include <string.h>
 void displayLines(char *filename);
 listString getBasesFormes(char *filename);
+listString getBasesFormesNom(char *filename);
 #endif //PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H
