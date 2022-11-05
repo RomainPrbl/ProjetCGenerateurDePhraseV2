@@ -5,20 +5,21 @@
 #include "list.h"
 
 void addInListString(listString L,char* string){
-    nodeString string1 = malloc(sizeof (nodeString));
-    strcpy(string1->data,string);
-    string1->children=NULL;
+    nodeString new= malloc(sizeof (s_nodeString));
+    strcpy(new->data,string);
+    new->children=NULL;
     if(L->head==NULL){
-        L->head=string1;
+        L->head=new;
     }
     else{
         nodeString temp=L->head;
         while(temp->children!=NULL){
             temp=temp->children;
         }
-        temp->children=string1;
+        temp->children= new;
     }
 }
+
 
 int checkIfInList(listString L,char* string){
 
@@ -48,7 +49,8 @@ void displayStringList(listString L) {
             printf("%s->", temp->data);
             temp = temp->children;
         }
-        printf("%s->",temp);
+        printf("%s->",temp->data);
+      //  printf("\n head : %s\n",L->head->data);
         printf("NULL");
     }
 }
