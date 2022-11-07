@@ -108,3 +108,23 @@ listString getBasesFormesAdjective(char *filename)
     fclose(dicofile);
     return BasesFormesNom;
 }
+
+void addBasesFormesInThree(listString List,three three){
+    char letter=NULL;
+    int index=-1;
+    if(List==NULL){
+        printf("La liste n'est pas remplie de ses formes de bases");
+    }
+    else{
+        nodeString temp = List->head;
+       while(temp!=NULL){
+           if(index==-1){
+               //three.root[0]=
+               index++;
+           }
+
+
+           temp=temp->children;
+       }
+    }
+}
