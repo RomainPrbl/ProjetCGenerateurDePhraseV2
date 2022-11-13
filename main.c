@@ -10,6 +10,7 @@ int main() {
     test->head=NULL;
     test= getBasesFormesNom("D:/generateurdemot/ProjetCGenerateurDePhraseV2/dictionnaire.txt");
     displayStringList(test);
-
+    three *tree=createInitialThree();
+    addBasesFormesInTree(test,*tree);
     return 0;
 }

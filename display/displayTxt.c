@@ -121,10 +121,7 @@ void addBasesFormesInTree(listString List,three three){
         node currentNode=NULL;
        while(temp!=NULL){
            if(currentNode==NULL){
-               currentNode=three.root[temp->data[0]-97];
-           }
-           else{
-               currentNode=new->data;
+               currentNode=three.root[(temp->data[0])-97];
            }
            while(temp->data[index] != '\0'){
                list L;
@@ -132,6 +129,7 @@ void addBasesFormesInTree(listString List,three three){
                new->data=createNode(temp->data[index]);
                addInListCell(L,new);
                currentNode->children=L;
+               currentNode =new->data;
            }
 
 
