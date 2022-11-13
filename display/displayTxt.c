@@ -118,12 +118,14 @@ void addBasesFormesInTree(listString List,three three){
     else{
         nodeString temp = List->head;
         cell new;
-        node currentNode=NULL
+        node currentNode=NULL;
        while(temp!=NULL){
            if(currentNode==NULL){
-               currentNode=
+               currentNode=three.root[temp->data[0]-97];
            }
-           currentNode=new->data;
+           else{
+               currentNode=new->data;
+           }
            while(temp->data[index] != '\0'){
                list L;
                new= malloc(sizeof (cell));
