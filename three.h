@@ -33,7 +33,7 @@ typedef struct three{
 }three;
 
 
-three* createInitialThree();
+three createInitialThree();
 node createNode(char a);
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H

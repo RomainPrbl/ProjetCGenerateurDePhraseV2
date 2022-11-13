@@ -109,27 +109,29 @@ listString getBasesFormesAdjective(char *filename)
     return BasesFormesNom;
 }
 
-void addBasesFormesInTree(listString List,three three){
-    char letter=NULL;
-    int index=1;
+void addBasesFormesInTree(listString List,three *three){
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
     else{
+        list L=NULL;
         nodeString temp = List->head;
         cell new;
         node currentNode=NULL;
        while(temp!=NULL){
-           if(currentNode==NULL){
-               currentNode=three.root[(temp->data[0])-97];
-           }
+           int index=0;
            while(temp->data[index] != '\0'){
-               list L;
+               if(index==0){
+                   currentNode=three->root[(temp->data[0])-97];
+                   index++;
+               }
                new= malloc(sizeof (cell));
                new->data=createNode(temp->data[index]);
-               addInListCell(L,new);
+               new->next=NULL;
+               addInListCell(L,new); //pb ICI
                currentNode->children=L;
                currentNode =new->data;
+               index++;
            }
 
 

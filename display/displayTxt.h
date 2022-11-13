@@ -11,7 +11,7 @@
 void displayLines(char *filename);
 listString getBasesFormes(char *filename);
 listString getBasesFormesNom(char *filename);
-void addBasesFormesInTree(listString List,three three);
-three treeNom = createInitialThree();
+void addBasesFormesInTree(listString List,three *three);
+
 
 #endif //PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H
