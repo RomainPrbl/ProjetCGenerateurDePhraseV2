@@ -54,3 +54,18 @@ void displayStringList(listString L) {
         printf("NULL");
     }
 }
+
+
+void addInListCell(list L,cell cellToAdd){
+    if(L==NULL){
+        L= malloc(sizeof (slist));
+        L->head=cellToAdd;
+    }
+    else{
+        cell temp = L->head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        temp->next= cellToAdd;
+    }
+}
