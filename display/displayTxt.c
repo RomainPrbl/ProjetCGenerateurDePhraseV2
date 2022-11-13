@@ -117,9 +117,19 @@ void addBasesFormesInTree(listString List,three three){
     }
     else{
         nodeString temp = List->head;
+        cell new;
+        node currentNode=NULL
        while(temp!=NULL){
+           if(currentNode==NULL){
+               currentNode=
+           }
+           currentNode=new->data;
            while(temp->data[index] != '\0'){
-               node node = createNode(temp->data[index]);
+               list L;
+               new= malloc(sizeof (cell));
+               new->data=createNode(temp->data[index]);
+               addInListCell(L,new);
+
            }
 
 
