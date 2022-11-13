@@ -111,16 +111,15 @@ listString getBasesFormesAdjective(char *filename)
 
 void addBasesFormesInThree(listString List,three three){
     char letter=NULL;
-    int index=-1;
+    int index=1;
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
     else{
         nodeString temp = List->head;
        while(temp!=NULL){
-           if(index==-1){
-               //three.root[0]=
-               index++;
+           while(temp->data[index] != '\0'){
+               node node = createNode(temp->data[index]);
            }
 
 

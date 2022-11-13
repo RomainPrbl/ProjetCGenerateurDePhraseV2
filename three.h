@@ -34,6 +34,6 @@ typedef struct three{
 
 
 three* createInitialThree();
-
+node createNode(char a);
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H

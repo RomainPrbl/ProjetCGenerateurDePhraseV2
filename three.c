@@ -14,3 +14,10 @@ three* createInitialThree(){
     }
     return mythree;
 }
+
+node createNode(char a){
+    node newNode = malloc(sizeof (s_node));
+    newNode->data=a;
+    newNode->children=NULL;
+    return newNode;
+}
