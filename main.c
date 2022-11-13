@@ -8,7 +8,7 @@ int main() {
     //displayStringList(test);
     listString test = malloc(sizeof (slistString));
     test->head=NULL;
-    test= getBasesFormesNom("D:/generateurdemot/ProjetCGenerateurDePhraseV2/dictionnaire.txt");
+    test= getBasesFormesNom("/Users/louiselavergne/Documents/ProjetCGenerateurDePhraseV2/miniDictionnaire.txt");
     displayStringList(test);
 
     return 0;
