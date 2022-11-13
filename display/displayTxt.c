@@ -109,7 +109,7 @@ listString getBasesFormesAdjective(char *filename)
     return BasesFormesNom;
 }
 
-void addBasesFormesInThree(listString List,three three){
+void addBasesFormesInTree(listString List,three three){
     char letter=NULL;
     int index=1;
     if(List==NULL){
