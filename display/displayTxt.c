@@ -131,11 +131,12 @@ void addBasesFormesInTree(listString List,three three){
                new= malloc(sizeof (cell));
                new->data=createNode(temp->data[index]);
                addInListCell(L,new);
-
+               currentNode->children=L;
            }
 
 
            temp=temp->children;
+           currentNode=NULL;
        }
     }
 }
