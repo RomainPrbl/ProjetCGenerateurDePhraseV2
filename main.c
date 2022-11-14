@@ -12,9 +12,18 @@ int main() {
     //displayStringList(test);
     //displayStringList(test);
     three tree=createInitialThree();
-    addBasesFormesInTree(test,&tree);
-    printf("three root = %c\n"
-           //"three sec = %c",
-           ,tree.root[18]->children->head->data->data);
+
+    node test2 =malloc(sizeof (node));
+    test2->data = 'c';
+    test2->children = NULL;
+    s_cell * cellule = malloc(sizeof (s_cell));
+    cellule->data = test2;
+    cellule->next =NULL;
+    tree.root[7]->children->head = cellule;
+    printf("la : %d",CharIsInNodeChildren('c',tree.root[7]));
+    node nodeTest = NULL;
+    s_nodeString* nodeStringtest = malloc(sizeof (s_nodeString));
+    strcpy(nodeStringtest->data,"hello");
+    IsWordAlreadyInthree(tree,nodeStringtest);
     return 0;
 }
