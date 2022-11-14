@@ -13,17 +13,23 @@ int main() {
     //displayStringList(test);
     three tree=createInitialThree();
 
-    node test2 =malloc(sizeof (node));
-    test2->data = 'c';
-    test2->children = NULL;
-    s_cell * cellule = malloc(sizeof (s_cell));
-    cellule->data = test2;
-    cellule->next =NULL;
-    tree.root[7]->children->head = cellule;
-    printf("la : %d",CharIsInNodeChildren('c',tree.root[7]));
-    node nodeTest = NULL;
-    s_nodeString* nodeStringtest = malloc(sizeof (s_nodeString));
-    strcpy(nodeStringtest->data,"hello");
-    IsWordAlreadyInthree(tree,nodeStringtest);
+    node noeud = malloc(sizeof (node));
+    noeud->data ='c';
+    node noeud2 = malloc(sizeof (node));
+    noeud2->data ='k';
+    node noeud3 = malloc(sizeof (node));
+    noeud3->data ='b';
+    s_cell *cellule = malloc(sizeof (s_cell));
+    cellule->data = noeud2;
+    s_cell *cellule2 = malloc(sizeof (s_cell));
+    cellule2->data = noeud3;
+    cellule2->next = NULL;
+    slist* tete = malloc(sizeof(slist));
+    tete->head = cellule;
+    noeud->children = tete;
+    cellule->next = cellule2;
+    printf("adresse de node = %d",noeud3);
+    printf("%d\n",CharIsInNodeChildren('b',noeud));
+    printf("%c\n",returnChildrenNodeWithTheCaractereOfANode(noeud,'b')->data);
     return 0;
 }

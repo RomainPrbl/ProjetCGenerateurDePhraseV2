@@ -109,7 +109,7 @@ listString getBasesFormesAdjective(char *filename)
 }
 
 int CharIsInNodeChildren(char caractere,node noeud){
-    // je suis dans un noeud et je me demande si dans c'est enfants il y a le caractere 'a' par ex
+    // je suis dans un noeud et je me demande si dans ses enfants il y a le caractere 'a' par ex
     if (noeud == NULL) return -1;
     s_cell* temp = noeud->children->head;
     while(temp != NULL){
@@ -120,6 +120,7 @@ int CharIsInNodeChildren(char caractere,node noeud){
     }
     return 0;
 }
+
 node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere){
     s_cell* temp;
     temp = noeud->children->head;
