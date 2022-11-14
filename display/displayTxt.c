@@ -116,7 +116,7 @@ void addBasesFormesInTree(listString List,three *three){
     else{
         list L=NULL;
         nodeString temp = List->head;
-        cell new;
+        cell new= malloc(sizeof (s_cell));;
         node currentNode=NULL;
        while(temp!=NULL){
            int index=0;
@@ -125,7 +125,6 @@ void addBasesFormesInTree(listString List,three *three){
                    currentNode=three->root[(temp->data[0])-97];
                    index++;
                }
-               new= malloc(sizeof (cell));
                new->data=createNode(temp->data[index]);
                new->next=NULL;
                addInListCell(L,new); //pb ICI
@@ -133,7 +132,6 @@ void addBasesFormesInTree(listString List,three *three){
                currentNode =new->data;
                index++;
            }
-
 
            temp=temp->children;
            currentNode=NULL;
