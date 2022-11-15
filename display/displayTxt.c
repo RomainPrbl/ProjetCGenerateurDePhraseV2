@@ -156,10 +156,7 @@ int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
     return 1;
 }
 
-void createThreeWithListString(listString listeCarcatere){
-    three arbre = createInitialThree();
 
-}
 
 void addBasesFormesInTree(listString List,three *tree){
     if(List==NULL){
