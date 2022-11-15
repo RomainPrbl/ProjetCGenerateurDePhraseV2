@@ -108,9 +108,9 @@ listString getBasesFormesAdjective(char *filename)
     return BasesFormesNom;
 }
 
-<<<<<<< HEAD
-void addBasesFormesInTree(listString List,three *tree){
-=======
+
+
+
 int CharIsInNodeChildren(char caractere,node noeud){
     // je suis dans un noeud et je me demande si dans ses enfants il y a le caractere 'a' par ex
     if (noeud == NULL) return -1;
@@ -160,9 +160,8 @@ void createThreeWithListString(listString listeCarcatere){
     three arbre = createInitialThree();
 
 }
-/*
+
 void addBasesFormesInTree(listString List,three *three){
->>>>>>> Romain_dev_v2
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
@@ -189,4 +188,4 @@ void addBasesFormesInTree(listString List,three *three){
         }
             temp=temp->children;
     }
-}*/
+}
