@@ -28,8 +28,12 @@ int main() {
     tete->head = cellule;
     noeud->children = tete;
     cellule->next = cellule2;
-    printf("adresse de node = %d",noeud3);
-    printf("%d\n",CharIsInNodeChildren('b',noeud));
-    printf("%c\n",returnChildrenNodeWithTheCaractereOfANode(noeud,'b')->data);
+    tree.root[2] = noeud;
+    s_nodeString * noeudMot = malloc(sizeof (s_nodeString));
+    strcpy(noeudMot->data,"ckb");
+    printf("adresse de node = %d\n",noeud3);
+    printf("fct 1 =%d\n",CharIsInNodeChildren('s',noeud));
+    printf("fct 2 =%c\n",returnChildrenNodeWithTheCaractereOfANode(noeud,'b')->data);
+    printf("\nfct final = %d\n",IsWordAlreadyInthree(tree,noeudMot));
     return 0;
 }
