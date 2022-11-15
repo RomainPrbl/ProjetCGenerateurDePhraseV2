@@ -168,7 +168,9 @@ void addBasesFormesInTree(listString List,three *tree){
     else {
         nodeString temp = List->head;
         int index=0;
-        char* mot ="";
+        nodeString mot = malloc(sizeof (s_nodeString));
+        strcpy(mot->data,"");
+        mot->children=NULL;
         cell newCell;
         node currentNode=NULL;
         while(temp!=NULL) {
@@ -176,7 +178,7 @@ void addBasesFormesInTree(listString List,three *tree){
                 if(currentNode==NULL){
                     currentNode=tree->root[((int)mot[0])+97];
                 }
-            if (!IsWordAlreadyInthree(mot)) {
+            if (!IsWordAlreadyInthree(mot->data,tree)) {
                 newCell= createCell(createNode(temp->data[index]));
                 addInListCell(currentNode->children,newCell);
             }
