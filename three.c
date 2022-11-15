@@ -20,5 +20,6 @@ node createNode(char a){
     list enfant = malloc(sizeof (slist));
     newNode->data=a;
     newNode->children=enfant;
+    newNode->isWord=0;
     return newNode;
 }

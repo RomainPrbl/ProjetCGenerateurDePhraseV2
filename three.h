@@ -11,6 +11,7 @@
 typedef struct s_node{
     char data;
     struct slist* children;
+    int isWord;
     //pointeurs de formes fléchis
 }s_node;
 

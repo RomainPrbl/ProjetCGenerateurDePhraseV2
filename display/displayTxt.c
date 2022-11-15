@@ -131,7 +131,8 @@ void addBasesFormesInTree(listString List,three *tree){
 
         }
             mot=strcat(mot,&temp->data[index++]);
-            newCell->data->children;
+            currentNode->isWord=1;
+            currentNode=newCell->data;
         }
             temp=temp->children;
     }
