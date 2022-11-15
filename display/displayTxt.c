@@ -112,7 +112,7 @@ int CharIsInNodeChildren(char caractere,node noeud){
     // je suis dans un noeud et je me demande si dans ses enfants il y a le caractere 'a' par ex
     printf("dans la sous fonction : \n");
     printf("caractere = %c\n",caractere);
-    printf("%d\n",noeud->children);
+    printf("ici = %d\n",noeud->children);
     if (noeud == NULL) return -1;
     if(noeud->children == NULL) return 0;
     s_cell* temp = noeud->children->head;

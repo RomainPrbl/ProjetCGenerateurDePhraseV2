@@ -17,7 +17,9 @@ int main() {
     noeud->data ='c';
     node noeud2 = malloc(sizeof (node));
     noeud2->data ='k';
-    noeud2->children->head == NULL;
+    slist* zeub = malloc(sizeof(slist));
+    zeub->head = NULL;
+    noeud2->children = zeub;
     node noeud3 = malloc(sizeof (node));
     noeud3->data ='b';
     s_cell *cellule = malloc(sizeof (s_cell));
@@ -31,7 +33,7 @@ int main() {
     cellule->next = cellule2;
     tree.root[2] = noeud;
     s_nodeString * noeudMot = malloc(sizeof (s_nodeString));
-    strcpy(noeudMot->data,"ckb");
+    strcpy(noeudMot->data,"cbk");
     printf("adresse de node = %d\n",noeud3);
     printf("fct 1 =%d\n",CharIsInNodeChildren('s',noeud));
     printf("fct 2 =%c\n",returnChildrenNodeWithTheCaractereOfANode(noeud,'b')->data);
