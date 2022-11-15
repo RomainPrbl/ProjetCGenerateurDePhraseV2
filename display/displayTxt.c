@@ -161,7 +161,7 @@ void createThreeWithListString(listString listeCarcatere){
 
 }
 
-void addBasesFormesInTree(listString List,three *three){
+void addBasesFormesInTree(listString List,three *tree){
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
