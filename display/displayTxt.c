@@ -110,9 +110,6 @@ listString getBasesFormesAdjective(char *filename)
 
 int CharIsInNodeChildren(char caractere,node noeud){
     // je suis dans un noeud et je me demande si dans ses enfants il y a le caractere 'a' par ex
-    printf("dans la sous fonction : \n");
-    printf("caractere = %c\n",caractere);
-    printf("ici = %d\n",noeud->children);
     if (noeud == NULL) return -1;
     if(noeud->children == NULL) return 0;
     s_cell* temp = noeud->children->head;
@@ -143,19 +140,12 @@ int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
     char indexPremiereLettre = noeudMot->data[0]-97;
     node noeud = arbre.root[indexPremiereLettre];
 
-    printf("taille de la chaine = %d \n",strlen(noeudMot->data));
     int i = 1;
 
     while (i < strlen(noeudMot->data)){
-        printf("%d \n",i);
-        printf("%c\n",noeudMot->data[i]);
-        printf("%c\n",noeud->data);
-
         if (! CharIsInNodeChildren(noeudMot->data[i],noeud)){
-            printf("le caractere n'est pas dans les noeuds enfants");
             return 0;
         }
-        printf("hello\n");
         //la le noeud a bien la lettre en enfant
         noeud = returnChildrenNodeWithTheCaractereOfANode(noeud,noeudMot->data[i]);
         i++;
