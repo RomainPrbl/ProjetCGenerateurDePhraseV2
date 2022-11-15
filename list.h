@@ -30,7 +30,7 @@ typedef struct slistString{
 
 typedef slistString* listString;
 
-void addInListCell(list L,cell cell);
+list addInListCell(list L,cell cell);
 void addInListString(listString L,char* string);
 int checkIfInList(listString L,char* string);
 void displayStringList(listString L);
