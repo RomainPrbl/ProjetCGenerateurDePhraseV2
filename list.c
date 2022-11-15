@@ -55,9 +55,21 @@ void displayStringList(listString L) {
     }
 }
 
+void addChildrenToNode(node node1,cell cell1){
 
-void addInListCell(list L,cell cellToAdd){
-    if(L==NULL){
+    if(node1->children->head==NULL){
+        list Liste=node1->children;
+        Liste= malloc(sizeof (slist));
+        Liste->head=NULL;
+    }
+    list Liste=node1->children;
+    addInListCell(Liste,cell1); //n'add pas à la liste
+    node1->children=Liste;
+}
+
+
+void addInListCell(list L,cell cellToAdd){ ///WIP
+    if(L->head==NULL){
         L= malloc(sizeof (slist));
         L->head=cellToAdd;
     }

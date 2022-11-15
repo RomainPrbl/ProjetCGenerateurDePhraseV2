@@ -11,7 +11,8 @@ three createInitialThree(){
         char lettre = (char)(i+97);
         mythree.root[i]=malloc(sizeof(node));
         mythree.root[i]->data=lettre;
-        mythree.root[i]->children = NULL;
+        mythree.root[i]->children = malloc(sizeof (slist));
+        mythree.root[i]->children->head=NULL;
         mythree.root[i]->isWord=0;
     }
     return mythree;
@@ -22,6 +23,7 @@ node createNode(char a){
     list enfant = malloc(sizeof (slist));
     newNode->data=a;
     newNode->children=enfant;
+    enfant->head=NULL;
     newNode->isWord=0;
     return newNode;
 }

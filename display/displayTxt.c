@@ -139,6 +139,7 @@ node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere){
 
 int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
     // check si le mot en paramètre est dans l'arbre si oui -> 1 sinon -> 0
+    if (noeudMot->data[0]=='\0') return 0;
     if ( ! ((noeudMot->data[0] <=122) && (noeudMot->data[0]>=97) )) return -1;
     char indexPremiereLettre = noeudMot->data[0]-97;
     node noeud = arbre.root[indexPremiereLettre];
@@ -169,19 +170,26 @@ void addBasesFormesInTree(listString List,three *tree){
         strcpy(mot->data,"");
         mot->children=NULL;
         cell newCell;
-        node currentNode=NULL;
+        node currentNode= malloc(sizeof (s_node));
         while(temp!=NULL) {
+            char letterOne=temp->data[0];
+            strcat(mot->data,&letterOne);
+            mot->data[1]='\0';
             while (temp->data[index] != '\0') {
-                if(currentNode==NULL){
-                    currentNode=tree->root[((int)mot->data[0])+97];
+                if(index==0){
+                    currentNode=tree->root[((int)temp->data[0])-97];
                 }
                 if (!IsWordAlreadyInthree(*tree,mot)) {
                 newCell= createCell(createNode(temp->data[index]));
-                addInListCell(currentNode->children,newCell);
+                newCell->data->children=NULL;
+                addChildrenToNode(currentNode,newCell);
                 }
                 index++;
                 mot->data[index]=temp->data[index];
-                currentNode=newCell->data;
+                mot->data[index+1]='\0';
+                if(!(index<=1)){
+                    currentNode=newCell->data;
+                }
         }
             index=0;
             currentNode->isWord=1;

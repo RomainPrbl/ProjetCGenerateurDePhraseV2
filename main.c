@@ -13,6 +13,6 @@ int main() {
     //displayStringList(test);
     three tree=createInitialThree();
     addBasesFormesInTree(test,&tree);
-    printf("%c",tree.root[2]->children->head->data);
+    printf("%c",tree.root[18]->children->head->data);
     return 0;
 }
