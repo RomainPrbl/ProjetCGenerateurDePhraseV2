@@ -124,7 +124,7 @@ void addBasesFormesInTree(listString List,three *tree){
                 if(currentNode==NULL){
                     currentNode=tree->root[((int)mot[0])+97];
                 }
-            if (!isWordLocateInTree(mot)) {
+            if (!IsWordAlreadyInthree(mot)) {
                 newCell= createCell(createNode(temp->data[index]));
                 addInListCell(currentNode->children,newCell);
             }
