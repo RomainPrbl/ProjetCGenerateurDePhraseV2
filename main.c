@@ -37,6 +37,6 @@ int main() {
     printf("adresse de node = %d\n",noeud3);
     printf("fct 1 =%d\n",CharIsInNodeChildren('s',noeud));
     printf("fct 2 =%c\n",returnChildrenNodeWithTheCaractereOfANode(noeud,'b')->data);
-    printf("\nfct final = %d\n",IsWordAlreadyInthree(tree,*noeudMot));
+    printf("\nfct final = %d\n",IsWordAlreadyInthree(tree,noeudMot));
     return 0;
 }
