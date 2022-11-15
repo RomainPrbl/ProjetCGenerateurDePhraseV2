@@ -34,4 +34,5 @@ void addInListCell(list L,cell cell);
 void addInListString(listString L,char* string);
 int checkIfInList(listString L,char* string);
 void displayStringList(listString L);
+cell createCell(node node1);
 #endif //PROJETCGENERATEURDEPHRASEV2_LIST_H

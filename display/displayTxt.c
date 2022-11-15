@@ -109,7 +109,7 @@ listString getBasesFormesAdjective(char *filename)
     return BasesFormesNom;
 }
 
-void addBasesFormesInTree(listString List,three *three){
+void addBasesFormesInTree(listString List,three *tree){
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
@@ -117,16 +117,22 @@ void addBasesFormesInTree(listString List,three *three){
         nodeString temp = List->head;
         int index=0;
         char* mot ="";
-        while(temp!=NULL){
-            while(temp->data[index]!='\0')
-                if(isWordLocateInTree(mot)){
-
+        cell newCell;
+        node currentNode=NULL;
+        while(temp!=NULL) {
+            while (temp->data[index] != '\0') {
+                if(currentNode==NULL){
+                    currentNode=tree->root[((int)mot[0])+97];
                 }
-                else{
-                    
-                }
+            if (!isWordLocateInTree(mot)) {
+                newCell= createCell(createNode(temp->data[index]));
+                addInListCell(currentNode->children,newCell);
+            }
 
-            temp=temp->children;
         }
+            mot=strcat(mot,&temp->data[index++]);
+            newCell->data->children;
+        }
+            temp=temp->children;
     }
 }
