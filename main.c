@@ -17,6 +17,7 @@ int main() {
     noeud->data ='c';
     node noeud2 = malloc(sizeof (node));
     noeud2->data ='k';
+    noeud2->children->head == NULL;
     node noeud3 = malloc(sizeof (node));
     noeud3->data ='b';
     s_cell *cellule = malloc(sizeof (s_cell));
