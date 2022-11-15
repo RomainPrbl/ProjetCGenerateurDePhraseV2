@@ -113,6 +113,20 @@ void addBasesFormesInTree(listString List,three *three){
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
-    else{
-        
+    else {
+        nodeString temp = List->head;
+        int index=0;
+        char* mot ="";
+        while(temp!=NULL){
+            while(temp->data[index]!='\0')
+                if(isWordLocateInTree(mot)){
+
+                }
+                else{
+                    
+                }
+
+            temp=temp->children;
+        }
+    }
 }
