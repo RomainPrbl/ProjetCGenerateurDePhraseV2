@@ -12,6 +12,7 @@ three createInitialThree(){
         mythree.root[i]=malloc(sizeof(node));
         mythree.root[i]->data=lettre;
         mythree.root[i]->children = NULL;
+        mythree.root[i]->isWord=0;
     }
     return mythree;
 }
