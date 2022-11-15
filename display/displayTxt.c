@@ -114,27 +114,5 @@ void addBasesFormesInTree(listString List,three *three){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
     else{
-        list L=NULL;
-        nodeString temp = List->head;
-        cell new= malloc(sizeof (s_cell));;
-        node currentNode=NULL;
-       while(temp!=NULL){
-           int index=0;
-           while(temp->data[index] != '\0'){
-               if(index==0){
-                   currentNode=three->root[(temp->data[0])-97];
-                   index++;
-               }
-               new->data=createNode(temp->data[index]);
-               new->next=NULL;
-               addInListCell(L,new); //pb ICI
-               currentNode->children=L;
-               currentNode =new->data;
-               index++;
-           }
-
-           temp=temp->children;
-           currentNode=NULL;
-       }
-    }
+        
 }

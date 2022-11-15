@@ -17,7 +17,8 @@ three createInitialThree(){
 
 node createNode(char a){
     node newNode = malloc(sizeof (s_node));
+    list enfant = malloc(sizeof (slist));
     newNode->data=a;
-    newNode->children=NULL;
+    newNode->children=enfant;
     return newNode;
 }

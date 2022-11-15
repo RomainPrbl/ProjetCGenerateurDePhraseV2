@@ -69,3 +69,10 @@ void addInListCell(list L,cell cellToAdd){
         temp->next= cellToAdd;
     }
 }
+
+cell createCell(node node1){
+    cell newCell= malloc(sizeof (s_cell));
+    newCell->data=node1;
+    newCell->next=NULL;
+    return newCell;
+}
