@@ -66,7 +66,6 @@ listString getBasesFormesNom(char *filename)
     return BasesFormesNom;
 }
 
-
 listString getBasesFormesVerbe(char *filename)
 {
     listString BasesFormesNom=malloc(sizeof (listString));
@@ -110,6 +109,8 @@ listString getBasesFormesAdjective(char *filename)
 }
 
 void addBasesFormesInTree(listString List,three *tree){
+void addBasesFormesInTree(listString List,three *three){
+>>>>>>> Romain_dev_v2
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
