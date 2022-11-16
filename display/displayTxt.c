@@ -108,9 +108,6 @@ listString getBasesFormesAdjective(char *filename)
     return BasesFormesNom;
 }
 
-
-
-
 int CharIsInNodeChildren(char caractere,node noeud){
     // je suis dans un noeud et je me demande si dans ses enfants il y a le caractere 'a' par ex
     if (noeud == NULL) return -1;
@@ -203,5 +200,100 @@ void addBasesFormesInTree(listString List,three *tree){
             currentNode->isWord=1;
             temp=temp->children;
         }
+    }
+}
+
+/////////////////////////////////////////////////////////
+
+
+void numberOfWord(node noeud,int* compteur) {
+    printf("noeud %c et compteur = %d\n",noeud->data,*compteur);
+    if (!((noeud->children == NULL) || (noeud)->children->head == NULL)) {
+        printf("hey\n");
+        s_cell *temp = noeud->children->head;
+        if (noeud->isWord == 1){
+            (*compteur)++;
+        }
+        while (temp != NULL) {
+            numberOfWord(temp->data, compteur);
+            temp = temp->next;
+        }
+    }else{
+        printf("ce noeud na pas d'enfants ^\n");
+    }
+}
+
+int numberOfWordInthree(three arbre){
+    int cpt = 26;
+    int temp = 0;
+    for (int i = 0 ; i < 26 ; i ++){
+        temp = 0;
+        numberOfWord(arbre.root[i],&temp);
+        cpt += temp;
+    }
+    return cpt;
+}
+
+int childrensNumberOfaNode(node noeudParent){
+    int compteurEnfants = 0;
+    if ((noeudParent->children == NULL) || (noeudParent->children->head == NULL)  ){
+        printf("Il n'y a pas d'enfant au noeud ( %c )",noeudParent->data);
+        return -1;
+    }
+    s_cell* temp = noeudParent->children->head;
+    while(temp != NULL){
+        compteurEnfants++;
+        temp = temp->next;
+    }
+    return compteurEnfants;
+
+
+}
+
+s_nodeString* generateRandomWord(three arbre){
+    //le type de mot generé depant de l'arbre en parametre
+    s_nodeString * mot = malloc(sizeof (s_nodeString));
+    mot->children = NULL;
+    int lettreDeDepart = randomNumber(0,25);
+    int enfantAleatoire = 0;
+    int i = 1 ;
+    int trouve = 0;
+    int indexDuMotEnConstruction = 0;
+    int nbDeMotDansArbre = numberOfWordInthree(arbre);
+    int idMot = numberOfWordInthree(arbre);
+    node noeud = arbre.root[lettreDeDepart];
+    while (trouve != 1 ){
+        s_cell * temp = noeud->children->head;
+        enfantAleatoire = randomNumber(1, childrensNumberOfaNode(noeud));
+        while(i < enfantAleatoire){
+            temp = temp->next;
+            i++;
+        }
+        mot->data[indexDuMotEnConstruction] = temp->data->data;
+        noeud = temp->data;
+        if( (noeud->isWord == 1) && (randomNumber(1,nbDeMotDansArbre) == idMot)){
+            trouve = 1;
+            mot->data[indexDuMotEnConstruction+1] = '\0';
+        };
+        indexDuMotEnConstruction++;
+        i = 1;
+        return mot;
+    }
+
+}
+
+int randomNumber(int min, int max){
+    srand(time(NULL));
+    return rand()%(max-min+1) + min;
+}
+
+void generateRandomSentence(s_ListOfThree listePrincipale,int modele){
+    if (modele == 1){
+
+    }else if (modele == 2){
+
+    }else{
+        printf("Ce modele n'existent pas \n");
+        return;
     }
 }
