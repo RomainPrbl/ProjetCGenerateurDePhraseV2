@@ -55,29 +55,34 @@ void displayStringList(listString L) {
     }
 }
 
-void addChildrenToNode(node node1,cell cell1){
+void addChildrenToNode(node node1,cell cell1) {
 
-    if(node1->children==NULL){
-        list Liste=node1->children;
-        Liste= malloc(sizeof (slist));
-        Liste->head=NULL;
+    if (node1->children == NULL) {
+        list Liste = node1->children;
+        Liste = malloc(sizeof(slist));
+        Liste->head = NULL;
     }
-    list Liste=node1->children;
-    node1->children=addInListCell(Liste,cell1); //n'add pas à la liste
+    list Liste = node1->children;
+    if (Liste == NULL) {
+        Liste = malloc(sizeof(slist));
+        Liste->head = NULL;
+         //n'add pas à la liste
+    }
+    node1->children = addInListCell(Liste, cell1);
 }
 
-
-list addInListCell(list L,cell cellToAdd) { ///WIP
-    if (L->head == NULL) {
-        L = malloc(sizeof(slist));
-        L->head = cellToAdd;
-        return L;}
+    list addInListCell(list L, cell cellToAdd) {
+        ///WIP
+        if (L->head == NULL) {
+            L = malloc(sizeof(slist));
+            L->head = cellToAdd;
+            return L;
+        }
         cell temp = L->head;
         while (temp->next != NULL) {
             temp = temp->next;
         }
         temp->next = cellToAdd;
-
         return L;
     }
 
