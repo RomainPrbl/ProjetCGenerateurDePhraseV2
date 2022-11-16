@@ -57,13 +57,14 @@ void displayStringList(listString L) {
 
 void addChildrenToNode(node node1,cell cell1) {
 
-    if (node1->children == NULL) {
-        list Liste = node1->children;
-        Liste = malloc(sizeof(slist));
-        Liste->head = NULL;
-    }
+//    if (node1->children == NULL) {
+//        list Liste = node1->children;
+//        Liste = malloc(sizeof(slist));
+//        Liste->head = NULL;
+ //   }
+
     list Liste = node1->children;
-    if (Liste == NULL) {
+    if (Liste == NULL) {    //TOUJOURS EGALE A NULL JE SAIS PAS PK
         Liste = malloc(sizeof(slist));
         Liste->head = NULL;
          //n'add pas à la liste
@@ -73,6 +74,7 @@ void addChildrenToNode(node node1,cell cell1) {
 
     list addInListCell(list L, cell cellToAdd) {
         ///WIP
+        printf("cc");
         if (L->head == NULL) {
             L = malloc(sizeof(slist));
             L->head = cellToAdd;
