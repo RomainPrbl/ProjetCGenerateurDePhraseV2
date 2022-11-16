@@ -11,7 +11,7 @@ int main() {
     test= getBasesFormesNom("C:\\Users\\jeana\\source\\clion\\pojetmaxromainlouise\\test.txt");
     //displayStringList(test);
     //displayStringList(test);
-    three tree=createInitialThree();
+    tree tree=createInitialTree();
     addBasesFormesInTree(test,&tree);
     printf("%c",tree.root[18]->children->head->data->data);
     return 0;
