@@ -20,4 +20,6 @@ node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere);
 void numberOfWord(node noeud,int* compteur);
 void generateRandomSentence(s_ListOfThree listePrincipale,int modele);
 int randomNumber(int min, int max);
+int childrensNumberOfaNode(node noeudParent);
+
 #endif //PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H
