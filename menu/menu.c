@@ -22,28 +22,115 @@ void startMenu(){
     printf("|     Que souhaitez-vous faire ?     |\n");
     printf("|                                    |\n");
     printf("|                                    |\n");
+    Color(11, 0);
     printf("|       1. Generer une phrase        |\n");
+    Color(15, 0);
     printf("|                                    |\n");
+    Color(11, 0);
     printf("|       2. Voir les listes de mots   |\n");
+    Color(15, 0);
     printf("|                                    |\n");
+    Color(4, 0);
     printf("|       3. Sortie                    |\n");
+    Color(15, 0);
     printf("|------------------------------------|\n");
 }
 void controlStartMenu(){
-    int size;
     int val = controlInput(1,3);
     switch(val){
         case 1:
-            printf("Fonctionnalite non disponible pour l'instant\n");
+            GeneratorMenu();
+            controlGeneratorMenu();
             break;
 
         case 2:
-
+            listMenu();
+            controlListMenu();
             break;
 
 
         case 3:
             exit(0);
+            break;
+    }
+
+}
+
+void controlGeneratorMenu(){
+    int val = controlInput(1,3);
+    switch(val){
+        case 1:
+            printf("Fonctionnalite non disponible pour l'instant\n");
+            controlGeneratorMenu();
+            break;
+
+        case 2:
+            printf("Fonctionnalite non disponible pour l'instant\n");
+            controlGeneratorMenu();
+            break;
+
+        case 3:
+            startMenu();
+            controlStartMenu();
+            break;
+    }
+
+}
+void GeneratorMenu(){
+    Color(11, 0);
+    printf("|---------Generer une phrase---------|\n");
+    Color(15, 0);
+    printf("|                                    |\n");
+    printf("|       1. Avec les formes de bases  |\n");
+    printf("|                                    |\n");
+    printf("|       2. Avec les formes flechies  |\n");
+    printf("|                                    |\n");
+    printf("|       3. Retour                    |\n");
+    printf("|------------------------------------|\n");
+}
+void listMenu(){
+    Color(11, 0);
+    printf("|------Voir les listes de mots-------|\n");
+    Color(15, 0);
+    printf("|                                    |\n");
+    printf("|       1. Nom                       |\n");
+    printf("|                                    |\n");
+    printf("|       2. Adjectif                  |\n");
+    printf("|                                    |\n");
+    printf("|       3. Verbe                     |\n");
+    printf("|                                    |\n");
+    printf("|       4. Retour                    |\n");
+    printf("|------------------------------------|\n");
+}
+
+void controlListMenu(){
+    int val = controlInput(1,4);
+    listString list;
+    switch(val){
+        case 1:
+            list = getBasesFormesNom("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            displayStringList(list);
+            printf("\n");
+            controlListMenu();
+            break;
+
+        case 2:
+            list = getBasesFormesAdjective("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            displayStringList(list);
+            printf("\n");
+            controlListMenu();
+            break;
+
+        case 3:
+            list = getBasesFormesVerbe("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            displayStringList(list);
+            printf("\n");
+            controlListMenu();
+            break;
+
+        case 4:
+            startMenu();
+            controlStartMenu();
             break;
     }
 
