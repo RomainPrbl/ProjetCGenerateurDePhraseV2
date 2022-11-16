@@ -3,8 +3,9 @@
 //
 #include <stdio.h>
 #include <windows.h>
-#include "list.h"
-#include "../display/displayTxt.h"
+#include "../list.h"
+#include "../display/searchInTxt.h"
+#include "../display/searchInTxt.h"
 #ifndef PROJETCGENERATEURDEPHRASEV2_MENU_H
 #define PROJETCGENERATEURDEPHRASEV2_MENU_H
 
