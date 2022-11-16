@@ -179,17 +179,23 @@ void addBasesFormesInTree(listString List,three *tree){
                 if(index==0){
                     currentNode=tree->root[((int)temp->data[0])-97];
                 }
+                if((IsWordAlreadyInthree(*tree,mot)) && ((index>0))){
+                    printf("1");
+                    currentNode = FindNodeWithValue(currentNode,mot->data[index]);
+                    printf("\nICI2 :%c\n",currentNode->data);
+                }
                 if (!IsWordAlreadyInthree(*tree,mot)) {
                 newCell= createCell(createNode(temp->data[index]));
                 newCell->data->children=NULL;
-                addChildrenToNode(currentNode,newCell);
+                addChildrenToNode(currentNode,newCell); //Pas bon 2 eme mot
+                }
+
+                if(!(index<=1) && IsWordAlreadyInthree(*tree,mot)) {
+                    currentNode=newCell->data;
                 }
                 index++;
                 mot->data[index]=temp->data[index];
                 mot->data[index+1]='\0';
-                if(!(index<=1)){
-                    currentNode=newCell->data;
-                }
         }
             strcpy(mot->data,"");
             index=0;

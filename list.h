@@ -36,4 +36,5 @@ int checkIfInList(listString L,char* string);
 void displayStringList(listString L);
 cell createCell(node node1);
 void addChildrenToNode(node node1,cell cell1);
+node FindNodeWithValue(node node1,char a);
 #endif //PROJETCGENERATEURDEPHRASEV2_LIST_H

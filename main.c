@@ -8,11 +8,11 @@ int main() {
     //displayStringList(test);
     listString test = malloc(sizeof (slistString));
     test->head=NULL;
-    test= getBasesFormesNom("D:/generateurdemot/ProjetCGenerateurDePhraseV2/dictionnaire.txt");
+    test= getBasesFormesNom("D:/generateurdemot/ProjetCGenerateurDePhraseV2/test.txt");
     //displayStringList(test);
     //displayStringList(test);
     three tree=createInitialThree();
     addBasesFormesInTree(test,&tree);
-    printf("%c",tree.root[18]->children->head->data->data);
+    printf("print :%c",tree.root[18]->children->head->next->data->data);
     return 0;
 }
