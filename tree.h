@@ -29,12 +29,12 @@ typedef s_nodeString* nodeString;
 
 //faire struct de données pour formes fléchées
 
-typedef struct three{
+typedef struct tree{
     node root[26];
-}three;
+}tree;
 
 
-three createInitialThree();
+tree createInitialThree();
 node createNode(char a);
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H

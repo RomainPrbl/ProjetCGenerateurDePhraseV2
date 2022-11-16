@@ -137,7 +137,7 @@ node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere){
     return NULL;
 }
 
-int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
+int IsWordAlreadyIntree(tree arbre, s_nodeString* noeudMot){
     // check si le mot en paramètre est dans l'arbre si oui -> 1 sinon -> 0
     if (noeudMot->data[0]=='\0') return 0;
     if ( ! ((noeudMot->data[0] <=122) && (noeudMot->data[0]>=97) )) return -1;
@@ -159,7 +159,7 @@ int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
 
 
 
-void addBasesFormesInTree(listString List,three *tree){
+void addBasesFormesInTree(listString List,tree *tree){
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     }
@@ -179,18 +179,18 @@ void addBasesFormesInTree(listString List,three *tree){
                 if(index==0){
                     currentNode=tree->root[((int)temp->data[0])-97];
                 }
-                if((IsWordAlreadyInthree(*tree,mot)) && ((index>0))){
+                if((IsWordAlreadyIntree(*tree,mot)) && ((index>0))){
                     printf("1");
                     currentNode = FindNodeWithValue(currentNode,mot->data[index]);
                     printf("\nICI2 :%c\n",currentNode->data);
                 }
-                if (!IsWordAlreadyInthree(*tree,mot)) {
+                if (!IsWordAlreadyIntree(*tree,mot)) {
                 newCell= createCell(createNode(temp->data[index]));
                 newCell->data->children=NULL;
                 addChildrenToNode(currentNode,newCell); //Pas bon 2 eme mot
                 }
 
-                if(!(index<=1) && IsWordAlreadyInthree(*tree,mot)) {
+                if(!(index<=1) && IsWordAlreadyIntree(*tree,mot)) {
                     currentNode=newCell->data;
                 }
                 index++;

@@ -11,7 +11,7 @@ int main() {
     test= getBasesFormesNom("D:/generateurdemot/ProjetCGenerateurDePhraseV2/test.txt");
     //displayStringList(test);
     //displayStringList(test);
-    three tree=createInitialThree();
+    tree tree=createInitialThree();
     addBasesFormesInTree(test,&tree);
     printf("print :%c",tree.root[18]->children->head->next->data->data);
     return 0;

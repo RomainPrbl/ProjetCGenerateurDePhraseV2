@@ -11,8 +11,8 @@
 void displayLines(char *filename);
 listString getBasesFormes(char *filename);
 listString getBasesFormesNom(char *filename);
-void addBasesFormesInTree(listString List,three *tree);
-int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot);
+void addBasesFormesInTree(listString List,tree *tree);
+int IsWordAlreadyInthree(tree arbre, s_nodeString* noeudMot);
 int CharIsInNodeChildren(char caractere,node noeud);
 node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere);
 #endif //PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H

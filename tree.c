@@ -5,17 +5,17 @@
 #include "tree.h"
 
 
-three createInitialThree(){
-    three mythree;
+tree createInitialThree(){
+    tree mytree;
     for (int i=0;i<26;i++){
         char lettre = (char)(i+97);
-        mythree.root[i]=malloc(sizeof(node));
-        mythree.root[i]->data=lettre;
-        mythree.root[i]->children = malloc(sizeof (slist));
-        mythree.root[i]->children->head=NULL;
-        mythree.root[i]->isWord=0;
+        mytree.root[i]=malloc(sizeof(node));
+        mytree.root[i]->data=lettre;
+        mytree.root[i]->children = malloc(sizeof (slist));
+        mytree.root[i]->children->head=NULL;
+        mytree.root[i]->isWord=0;
     }
-    return mythree;
+    return mytree;
 }
 
 node createNode(char a){
