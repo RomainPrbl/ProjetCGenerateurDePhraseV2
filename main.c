@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "display/displayTxt.h"
+#include "display/searchInTxt.h"
 #include "tree.h"
 int main() {
     //three *ThreeForAllLetter=createInitialThree(); //Creer un three avec un tableau de toutes les lettres en root

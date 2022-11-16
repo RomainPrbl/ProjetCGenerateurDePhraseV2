@@ -36,5 +36,8 @@ typedef struct three{
 
 three createInitialThree();
 node createNode(char a);
+void addBasesFormesInTree(listString List,three *tree);
+int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot);
+int CharIsInNodeChildren(char caractere,node noeud);
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H

@@ -2,7 +2,7 @@
 // Created by maxou on 28/10/2022.
 //
 
-#include "displayTxt.h"
+#include "searchInTxt.h"
 
 
 void displayLines(char *filename)
@@ -108,65 +108,6 @@ listString getBasesFormesAdjective(char *filename)
     return BasesFormesNom;
 }
 
-
-
-
-int CharIsInNodeChildren(char caractere,node noeud){
-    // je suis dans un noeud et je me demande si dans ses enfants il y a le caractere 'a' par ex
-    if (noeud == NULL) return -1;
-    if(noeud->children == NULL) return 0;
-    s_cell* temp = noeud->children->head;
-    while(temp != NULL){
-        if (temp->data->data == caractere){
-            return 1;
-        }
-        temp = temp->next;
-    }
-    return 0;
-}
-
-node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere){
-    s_cell* temp;
-    temp = noeud->children->head;
-    while (temp != NULL){
-        if (temp->data->data == caractere) {
-            return temp->data;
-        }
-        temp = temp->next;
-    }
-    return NULL;
-}
-
-int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
-    // check si le mot en paramètre est dans l'arbre si oui -> 1 sinon -> 0
-    if (noeudMot->data[0]=='\0') return 0;
-    if ( ! ((noeudMot->data[0] <=122) && (noeudMot->data[0]>=97) )) return -1;
-    char indexPremiereLettre = noeudMot->data[0]-97;
-    node noeud = arbre.root[indexPremiereLettre];
-
-    int i = 1;
-
-    while (i < strlen(noeudMot->data)){
-        if (! CharIsInNodeChildren(noeudMot->data[i],noeud)){
-            return 0;
-        }
-        //la le noeud a bien la lettre en enfant
-        noeud = returnChildrenNodeWithTheCaractereOfANode(noeud,noeudMot->data[i]);
-        i++;
-    }
-    return 1;
-}
-
-node getNodeInNodeByChar(node startNode, char charToFind) {
-    cell temporaryCell = startNode->children->head;
-    while (temporaryCell != NULL) {
-        if (temporaryCell->data->data == charToFind) {
-            return temporaryCell->data;
-        }
-        temporaryCell = temporaryCell->next;
-    }
-    return NULL;
-}
 
 void addBasesFormesInTree(listString List,three *tree){
     if(List==NULL){
