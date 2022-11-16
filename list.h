@@ -4,11 +4,26 @@
 
 #ifndef PROJETCGENERATEURDEPHRASEV2_LIST_H
 #define PROJETCGENERATEURDEPHRASEV2_LIST_H
-#include "tree.h"
+//#include "tree.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+typedef struct s_node{
+    char data;
+    struct slist* children;
+    int isWord;
+    //pointeurs de formes fléchis
+}s_node;
+
+typedef s_node* node;
 typedef struct s_node* node;
+
+typedef struct s_nodeString{
+    char data[25];
+    struct s_nodeString* children;
+    //pointeurs de formes fléchis
+}s_nodeString;
+
 typedef struct s_nodeString* nodeString;
 
 typedef struct s_cell{

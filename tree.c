@@ -121,5 +121,4 @@ void addBasesFormesInTree(listString List,tree *tree){
             temp=temp->children;
         }
     }
-    printf("%c\n",tree->root[18]->children->head->data->data);
 }

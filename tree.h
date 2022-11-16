@@ -10,22 +10,11 @@
 
 
 
-typedef struct s_node{
-    char data;
-    struct slist* children;
-    int isWord;
-    //pointeurs de formes fléchis
-}s_node;
 
-typedef s_node* node;
 
-typedef struct s_nodeString{
-    char data[25];
-    struct s_nodeString* children;
-    //pointeurs de formes fléchis
-}s_nodeString;
 
-typedef s_nodeString* nodeString;
+
+
 
 
 
