@@ -157,13 +157,21 @@ int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
     return 1;
 }
 
-
+node getNodeInNodeByChar(node startNode, char charToFind) {
+    cell temporaryCell = startNode->children->head;
+    while (temporaryCell != NULL) {
+        if (temporaryCell->data->data == charToFind) {
+            return temporaryCell->data;
+        }
+        temporaryCell = temporaryCell->next;
+    }
+    return NULL;
+}
 
 void addBasesFormesInTree(listString List,three *tree){
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
-    }
-    else {
+    } else {
         nodeString temp = List->head;
         int index=0;
         nodeString mot = malloc(sizeof (s_nodeString));
@@ -171,28 +179,27 @@ void addBasesFormesInTree(listString List,three *tree){
         mot->children=NULL;
         cell newCell;
         node currentNode= malloc(sizeof (s_node));
+        currentNode->children = NULL;
+        currentNode->data = 0;
         while(temp!=NULL) {
-            char letterOne=temp->data[0];
-            strcat(mot->data,&letterOne);
+            mot->data[0]=temp->data[0];
             mot->data[1]='\0';
+            index=0;
             while (temp->data[index] != '\0') {
                 if(index==0){
-                    currentNode=tree->root[((int)temp->data[0])-97];
-                }
-                if (!IsWordAlreadyInthree(*tree,mot)) {
-                newCell= createCell(createNode(temp->data[index]));
-                newCell->data->children=NULL;
-                addChildrenToNode(currentNode,newCell);
+                    currentNode=tree->root[((int)temp->data[0])-'a'];
+                } else if (!IsWordAlreadyInthree(*tree,mot)) {
+                    newCell= createCell(createNode(temp->data[index]));
+                    addChildrenToNode(currentNode,newCell);
+                    currentNode=newCell->data;
+                } else {
+                    currentNode = getNodeInNodeByChar(currentNode, mot->data[index]);
                 }
                 index++;
                 mot->data[index]=temp->data[index];
                 mot->data[index+1]='\0';
-                if(!(index<=1)){
-                    currentNode=newCell->data;
-                }
-        }
+            }
             strcpy(mot->data,"");
-            index=0;
             currentNode->isWord=1;
             temp=temp->children;
         }

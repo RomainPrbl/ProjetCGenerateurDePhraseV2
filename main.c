@@ -8,7 +8,7 @@ int main() {
     //displayStringList(test);
     listString test = malloc(sizeof (slistString));
     test->head=NULL;
-    test= getBasesFormesNom("D:/generateurdemot/ProjetCGenerateurDePhraseV2/dictionnaire.txt");
+    test= getBasesFormesNom("C:\\Users\\jeana\\source\\clion\\pojetmaxromainlouise\\test.txt");
     //displayStringList(test);
     //displayStringList(test);
     three tree=createInitialThree();
