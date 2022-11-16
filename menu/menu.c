@@ -2,7 +2,7 @@
 // Created by raphou on 14/11/2022.
 //
 
-#include "menu.h"
+#include "menu/menu.h"
 
 
 void Color(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
