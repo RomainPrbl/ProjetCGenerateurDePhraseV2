@@ -11,6 +11,7 @@
 typedef struct s_node{
     char data;
     struct slist* children;
+    int isWord;
     //pointeurs de formes fléchis
 }s_node;
 
@@ -32,7 +33,9 @@ typedef struct three{
     node root[26];
 }three;
 
-
+typedef struct s_ListOfThree {
+    three tab[4];
+}s_ListOfThree;
 three createInitialThree();
 node createNode(char a);
 

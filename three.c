@@ -20,5 +20,6 @@ node createNode(char a){
     node newNode = malloc(sizeof (s_node));
     newNode->data=a;
     newNode->children=NULL;
+    newNode->isWord = 0;
     return newNode;
 }
