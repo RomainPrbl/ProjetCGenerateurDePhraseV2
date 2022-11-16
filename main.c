@@ -8,7 +8,7 @@ int main() {
     //displayStringList(test);
     listString test = malloc(sizeof (slistString));
     test->head=NULL;
-    test= getBasesFormesNom("C:\\Users\\jeana\\source\\clion\\pojetmaxromainlouise\\test.txt");
+    test= getBasesFormesNom("../dictionnaire_non_accentue.txt");
     //displayStringList(test);
     //displayStringList(test);
     three tree=createInitialThree();
