@@ -8,7 +8,11 @@
 
 void startMenu();
 void Color(int couleurDuTexte,int couleurDeFond);
+void controlGeneratorMenu();
+void GeneratorMenu();
 void controlStartMenu();
+void controlListMenu();
+void listMenu();
 int controlInput(int min,int max);
 
 
