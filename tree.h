@@ -29,16 +29,16 @@ typedef s_nodeString* nodeString;
 
 //faire struct de données pour formes fléchées
 
-typedef struct three{
+typedef struct tree{
     node root[26];
-}three;
+}tree;
 
 
-three createInitialTree();
+tree createInitialTree();
 node createNode(char a);
-void addBasesFormesInTree(listString List,three *tree);
+void addBasesFormesInTree(listString List,tree *tree);
 node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere);
-int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot);
+int IsWordAlreadyIntree(tree arbre, s_nodeString* noeudMot);
 int CharIsInNodeChildren(char caractere,node noeud);
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H

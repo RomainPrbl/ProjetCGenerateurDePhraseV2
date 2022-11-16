@@ -5,8 +5,8 @@
 #include "tree.h"
 
 
-three createInitialTree(){
-    three mytree;
+tree createInitialTree(){
+    tree mytree;
     for (int i=0;i<26;i++){
         char lettre = (char)(i+97);
         mytree.root[i]=malloc(sizeof(node));
@@ -54,7 +54,7 @@ node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere){
     return NULL;
 }
 
-int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot){
+int IsWordAlreadyIntree(tree arbre, s_nodeString* noeudMot){
     // check si le mot en paramètre est dans l'arbre si oui -> 1 sinon -> 0
     if (noeudMot->data[0]=='\0') return 0;
     if ( ! ((noeudMot->data[0] <=122) && (noeudMot->data[0]>=97) )) return -1;
@@ -85,7 +85,7 @@ node getNodeInNodeByChar(node startNode, char charToFind) {
     return NULL;
 }
 
-void addBasesFormesInTree(listString List,three *tree){
+void addBasesFormesInTree(listString List,tree *tree){
     if(List==NULL){
         printf("La liste n'est pas remplie de ses formes de bases");
     } else {
@@ -105,7 +105,7 @@ void addBasesFormesInTree(listString List,three *tree){
             while (temp->data[index] != '\0') {
                 if(index==0){
                     currentNode=tree->root[((int)temp->data[0])-'a'];
-                } else if (!IsWordAlreadyInthree(*tree,mot)) {
+                } else if (!IsWordAlreadyIntree(*tree,mot)) {
                     newCell= createCell(createNode(temp->data[index]));
                     addChildrenToNode(currentNode,newCell);
                     currentNode=newCell->data;
