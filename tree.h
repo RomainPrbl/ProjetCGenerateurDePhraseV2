@@ -34,9 +34,10 @@ typedef struct three{
 }three;
 
 
-three createInitialThree();
+three createInitialTree();
 node createNode(char a);
 void addBasesFormesInTree(listString List,three *tree);
+node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere);
 int IsWordAlreadyInthree(three arbre, s_nodeString* noeudMot);
 int CharIsInNodeChildren(char caractere,node noeud);
 

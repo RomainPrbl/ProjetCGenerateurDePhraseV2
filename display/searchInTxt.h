@@ -11,5 +11,4 @@
 void displayLines(char *filename);
 listString getBasesFormes(char *filename);
 listString getBasesFormesNom(char *filename);
-node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere);
 #endif //PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H
