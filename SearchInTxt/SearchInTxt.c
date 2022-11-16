@@ -2,7 +2,7 @@
 // Created by maxou on 28/10/2022.
 //
 
-#include "displayTxt.h"
+#include "SearchInTxt.h"
 
 
 void displayLines(char *filename)
