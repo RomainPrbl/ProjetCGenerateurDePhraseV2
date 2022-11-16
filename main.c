@@ -6,6 +6,5 @@
 int main() {
     startMenu();
     controlStartMenu();
-
     return 0;
 }

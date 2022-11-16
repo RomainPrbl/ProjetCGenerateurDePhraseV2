@@ -44,7 +44,8 @@ void controlStartMenu(){
             break;
 
         case 2:
-
+            listMenu();
+            controlListMenu();
             break;
 
 
@@ -92,24 +93,42 @@ void listMenu(){
     printf("|------Voir les listes de mots-------|\n");
     Color(15, 0);
     printf("|                                    |\n");
-    printf("|       1. Avec les formes de bases  |\n");
+    printf("|       1. Nom                       |\n");
     printf("|                                    |\n");
-    printf("|       2. Avec les formes flechies  |\n");
+    printf("|       2. Adjectif                  |\n");
     printf("|                                    |\n");
-    printf("|       3. Retour                    |\n");
+    printf("|       3. Verbe                     |\n");
+    printf("|                                    |\n");
+    printf("|       4. Retour                    |\n");
     printf("|------------------------------------|\n");
 }
 
 void controlListMenu(){
-    int val = controlInput(1,3);
+    int val = controlInput(1,4);
+    listString list;
     switch(val){
         case 1:
+            list = getBasesFormesNom("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            displayStringList(list);
+            printf("\n");
+            controlListMenu();
             break;
 
         case 2:
+            list = getBasesFormesAdjective("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            displayStringList(list);
+            printf("\n");
+            controlListMenu();
             break;
 
         case 3:
+            list = getBasesFormesVerbe("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            displayStringList(list);
+            printf("\n");
+            controlListMenu();
+            break;
+
+        case 4:
             startMenu();
             controlStartMenu();
             break;

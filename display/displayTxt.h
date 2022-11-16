@@ -11,6 +11,8 @@
 void displayLines(char *filename);
 listString getBasesFormes(char *filename);
 listString getBasesFormesNom(char *filename);
+listString getBasesFormesAdjective(char *filename);
+listString getBasesFormesVerbe(char *filename);
 void addBasesFormesInTree(listString List,three *three);
 
 
