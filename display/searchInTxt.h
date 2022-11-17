@@ -13,4 +13,5 @@ listString getBasesFormes(char *filename);
 listString getBasesFormesNom(char *filename);
 listString getBasesFormesVerbe(char *filename);
 listString getBasesFormesAdjective(char *filename);
+listString getBasesFormesAdverbe(char *filename);
 #endif //PROJETCGENERATEURDEPHRASEV2_DISPLAY_TXT_H

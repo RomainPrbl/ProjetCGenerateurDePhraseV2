@@ -99,16 +99,18 @@ void listMenu(){
     printf("|                                    |\n");
     printf("|       3. Verbe                     |\n");
     printf("|                                    |\n");
-    printf("|       4. Retour                    |\n");
+    printf("|       4. Adverbe                   |\n");
+    printf("|                                    |\n");
+    printf("|       5. Retour                    |\n");
     printf("|------------------------------------|\n");
 }
 
 void controlListMenu(){
-    int val = controlInput(1,4);
+    int val = controlInput(1,5);
     listString list;
     switch(val){
         case 1:
-            list = getBasesFormesNom("../test.txt");
+            list = getBasesFormesAdverbe("../test.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();
@@ -129,6 +131,12 @@ void controlListMenu(){
             break;
 
         case 4:
+            list = getBasesFormesAdverbe("../test.txt");
+            displayStringList(list);
+            printf("\n");
+            controlListMenu();
+
+        case 5:
             startMenu();
             controlStartMenu();
             break;

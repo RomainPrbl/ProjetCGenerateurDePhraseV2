@@ -99,7 +99,27 @@ listString getBasesFormesAdjective(char *filename)
     {
         while (fscanf(dicofile,"%s\t%s\t%s",flechie, base, formes) != EOF)
         {
-            if (!checkIfInList(BasesFormesNom,base) && formes[0]=='A'){
+            if (!checkIfInList(BasesFormesNom,base) && formes[0]=='A' && formes[1]=='d' && formes[2]=='j'){
+                addInListString(BasesFormesNom,base);
+            }
+        }
+    }
+    fclose(dicofile);
+    return BasesFormesNom;
+}
+
+listString getBasesFormesAdverbe(char *filename){
+    listString BasesFormesNom=malloc(sizeof (listString));
+    BasesFormesNom->head =NULL;
+    FILE *dicofile = fopen(filename, "rt");
+    char flechie[35];
+    char base[35];
+    char formes[35];
+    if (dicofile != NULL)
+    {
+        while (fscanf(dicofile,"%s\t%s\t%s",flechie, base, formes) != EOF)
+        {
+            if (!checkIfInList(BasesFormesNom,base) && formes[0]=='A' && formes[1]=='d' && formes[2]=='v'){
                 addInListString(BasesFormesNom,base);
             }
         }
