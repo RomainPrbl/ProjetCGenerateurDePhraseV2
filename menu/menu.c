@@ -108,21 +108,21 @@ void controlListMenu(){
     listString list;
     switch(val){
         case 1:
-            list = getBasesFormesNom("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            list = getBasesFormesNom("../test.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();
             break;
 
         case 2:
-            list = getBasesFormesAdjective("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            list = getBasesFormesAdjective("../test.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();
             break;
 
         case 3:
-            list = getBasesFormesVerbe("C:/Users/slort/Documents/GitHub/ProjetCGenerateurDePhraseV2/test.txt");
+            list = getBasesFormesVerbe("../test.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();
