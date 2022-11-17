@@ -6,9 +6,13 @@
 int main() {
     //startMenu();
     //controlStartMenu();
-    tree ThreeForAllLetter=createInitialTree(); //Creer un three avec un tableau de toutes les lettres en root
-    listString test = getBasesFormes("../dictionnaire_non_accentue.txt");
+    listString test = malloc(sizeof (slistString));
+    test->head=NULL;
+    test= getBasesFormesNom("../dictionnaire_non_accentue.txt");
+    //displayStringList(test);
+    //displayStringList(test);
     tree tree=createInitialTree();
     addBasesFormesInTree(test,&tree);
+    printf("%c",tree.root[18]->children->head->data->data);
         return 0;
 }
