@@ -122,7 +122,7 @@ void addBasesFormesInTree(listString List,tree *tree){
         }
     }
 }
-s_nodeString* generateRandomWord(three arbre){
+s_nodeString* generateRandomWord(tree arbre){
     //le type de mot generé depend de l'arbre en parametre
     s_nodeString * mot = malloc(sizeof (s_nodeString));
     mot->children = NULL;
@@ -131,8 +131,8 @@ s_nodeString* generateRandomWord(three arbre){
     int i = 1 ;
     int trouve = 0;
     int indexDuMotEnConstruction = 0;
-    int nbDeMotDansArbre = numberOfWordInthree(arbre);
-    int idMot = numberOfWordInthree(arbre);
+    int nbDeMotDansArbre = numberOfWordIntree(arbre);
+    int idMot = numberOfWordIntree(arbre);
     node noeud = arbre.root[lettreDeDepart];
     while (trouve != 1){
         s_cell * temp = noeud->children->head;
