@@ -153,3 +153,51 @@ s_nodeString* generateRandomWord(tree arbre){
     return mot;
 }
 
+int randomNumber(int min, int max){
+    srand(time(NULL));
+    return rand()%(max-min+1) + min;
+}
+
+void numberOfWord(node noeud,int* compteur) {
+    printf("noeud %c et compteur = %d\n",noeud->data,compteur);
+    if (!((noeud->children == NULL) || (noeud)->children->head == NULL)) {
+        printf("hey\n");
+        s_cell temp = noeud->children->head;
+        if (noeud->isWord == 1){
+            (*compteur)++;
+        }
+        while (temp != NULL) {
+            numberOfWord(temp->data, compteur);
+            temp = temp->next;
+        }
+    }else{
+        printf("ce noeud na pas d'enfants ^\n");
+    }
+}
+int numberOfWordInthree(tree arbre){
+    int cpt = 26;
+    int temp = 0;
+    for (int i = 0 ; i < 26 ; i ++){
+        temp = 0;
+        numberOfWord(arbre.root[i],&temp);
+        cpt += temp;
+    }
+    return cpt;
+}
+
+int childrensNumberOfaNode(node noeudParent){
+    int compteurEnfants = 0;
+    if ((noeudParent->children == NULL) || (noeudParent->children->head == NULL)  ){
+        printf("Il n'y a pas d'enfant au noeud ( %c )",noeudParent->data);
+        return -1;
+    }
+    s_cell* temp = noeudParent->children->head;
+    while(temp != NULL){
+        compteurEnfants++;
+        temp = temp->next;
+    }
+    return compteurEnfants;
+
+
+}
+
