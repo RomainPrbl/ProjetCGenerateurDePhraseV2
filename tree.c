@@ -138,20 +138,22 @@ s_nodeString* generateRandomWord(tree arbre){
             printf("plus d'enfant et mot non fini");
             generateRandomWord(arbre);
         }
-        s_cell * temp = noeud->children->head;
-        enfantAleatoire = randomNumber(1, childrensNumberOfaNode(noeud));
-        while(i < enfantAleatoire){
-            temp = temp->next;
-            i++;
+        else {
+            s_cell *temp = noeud->children->head;
+            enfantAleatoire = randomNumber(1, childrensNumberOfaNode(noeud));
+            while (i < enfantAleatoire) {
+                temp = temp->next;
+                i++;
+            }
+            mot->data[indexDuMotEnConstruction] = temp->data->data;
+            if ((noeud->isWord == 1) && (randomNumber(1, 10) == 5)) {
+                trouve = 1;
+                mot->data[indexDuMotEnConstruction + 1] = '\0';
+            }
+            noeud = temp->data;
+            indexDuMotEnConstruction++;
+            i = 1;
         }
-        mot->data[indexDuMotEnConstruction] = temp->data->data;
-        if( (noeud->isWord == 1) && (randomNumber(1,10) == 5)){
-            trouve = 1;
-            mot->data[indexDuMotEnConstruction+1] = '\0';
-        }
-        noeud = temp->data;
-        indexDuMotEnConstruction++;
-        i = 1;
     }
     return mot;
 }
