@@ -3,6 +3,7 @@
 #include "display/displayTxt.h"
 #include "three.h"
 int main() {
+<<<<<<< Updated upstream
     //three *ThreeForAllLetter=createInitialThree(); //Creer un three avec un tableau de toutes les lettres en root
     //listString test = getBasesFormes("D:\\generateurdemot\\ProjetCGenerateurDePhraseV2\\dictionnaire.txt");
     //displayStringList(test);
@@ -15,4 +16,14 @@ int main() {
     addBasesFormesInTree(test,&tree);
     printf("print :%c",tree.root[18]->children->head->next->data->data);
     return 0;
+=======
+//    startMenu();
+//    controlStartMenu();
+    listString test = malloc(sizeof(slistString));
+    test->head = NULL;
+    test = getBasesFormesNom("../test.txt");
+    displayStringList(test);
+    tree tree = createInitialTree();
+    addBasesFormesInTree(test, &tree);
+>>>>>>> Stashed changes
 }
