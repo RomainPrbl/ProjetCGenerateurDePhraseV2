@@ -54,7 +54,7 @@ glutamate	glutamate	Nom:Mas+SG
 glutamique	glutamique	Adj:InvGen+SG
 gluten	gluten	Nom:Mas+SG
 accroche	accrocher	Ver:SPre+SG+P1
-accroche	accrocher	Ver:SPre+SG+P3
+accroche	accrocher	Nom:Mas+SG
 accrochee	accroche	Adj:Fem+SG
 accrochee	accrocher	Ver:PPas+Fem+SG
 accrochees	accroche	Adj:Fem+PL

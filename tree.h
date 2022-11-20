@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "time.h"
+#include "display/searchInTxt.h"
 
 
 
@@ -37,4 +38,5 @@ int numberOfWordIntree(tree arbre);
 void numberOfWord(node noeud,int* compteur);
 int randomNumber(int min, int max);
 int childrensNumberOfaNode(node noeudParent);
+void generateSentence(int modele);
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H

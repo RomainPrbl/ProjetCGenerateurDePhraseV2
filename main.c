@@ -3,7 +3,7 @@
 #include "display/searchInTxt.h"
 #include "tree.h"
 #include "menu/menu.h"
-int main() {
+int main() {/*
 //    startMenu();
 //    controlStartMenu();
     listString test = malloc(sizeof (slistString));
@@ -11,7 +11,7 @@ int main() {
     test= getBasesFormesNom("../test.txt");
     //displayStringList(test);
     tree tree=createInitialTree();
-    addBasesFormesInTree(test,&tree);
+    addBasesFormesInTree(test,&tree);*/
     srand(time(NULL));
-    printf("%s", generateRandomWord(tree)->data);
+    generateSentence(2);
 }

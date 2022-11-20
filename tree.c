@@ -122,6 +122,7 @@ void addBasesFormesInTree(listString List,tree *tree){
         }
     }
 }
+
 s_nodeString* generateRandomWord(tree arbre){
     //le type de mot generé depend de l'arbre en parametre
     s_nodeString * mot = malloc(sizeof (s_nodeString));
@@ -136,11 +137,11 @@ s_nodeString* generateRandomWord(tree arbre){
     mot->data[0] = noeud->data;
     printf("premiere de l'arbre : %c\n",noeud->data);
     while (trouve != 1){
-        // si il a pas d'enfant
-        if(childrensNumberOfaNode(noeud) == -1){
+
+        if(childrensNumberOfaNode(noeud) == -1){ // si il a pas d'enfant
             printf("plus d'enfant et mot non fini\n");
             printf("-----------------------------\n");
-            generateRandomWord(arbre);
+            noeud = arbre.root[randomNumber(0,25)];
         }
         else {
             printf("il y a des enfants\n");
@@ -153,7 +154,7 @@ s_nodeString* generateRandomWord(tree arbre){
             }
             mot->data[indexDuMotEnConstruction] = temp->data->data;
             printf("lettre du mot = %c\n",mot->data[indexDuMotEnConstruction]);
-            if (noeud->isWord == 1) { // && (randomNumber(1, 10) == 5)
+            if (temp->data->isWord == 1) { // && (randomNumber(1, 10) == 5)
                 trouve = 1;
                 mot->data[indexDuMotEnConstruction + 1] = '\0';
             }
@@ -185,6 +186,7 @@ void numberOfWord(node noeud,int* compteur) {
         printf("ce noeud na pas d'enfants ^\n");
     }
 }
+
 int numberOfWordIntree(tree arbre){
     int cpt = 26;
     int temp = 0;
@@ -202,7 +204,8 @@ int childrensNumberOfaNode(node noeudParent){
     /*if (noeudParent->children == NULL){
         printf("Il n'y a pas d'enfant");
         return -1;
-    }else */if ( noeudParent->children->head == NULL){
+    }else */
+    if ( noeudParent->children->head == NULL){
         printf("Il n'y a pas d'enfant2\n");
         return -1;
     }
@@ -217,3 +220,35 @@ int childrensNumberOfaNode(node noeudParent){
 
 }
 
+void generateSentence(int modele){
+    listString nom = malloc(sizeof (slistString));
+    nom->head=NULL;
+    listString verbe = malloc(sizeof (slistString));
+    verbe->head=NULL;
+    listString adverbe = malloc(sizeof (slistString));
+    adverbe->head=NULL;
+    listString adjective = malloc(sizeof (slistString));
+    adjective->head=NULL;
+
+    nom = getBasesFormesNom("../dictionnaire_non_accentue.txt");
+    verbe = getBasesFormesVerbe("../dictionnaire_non_accentue.txt");
+    adjective = getBasesFormesAdjective("../dictionnaire_non_accentue.txt");
+    adverbe = getBasesFormesAdverbe("../dictionnaire_non_accentue.txt");
+
+    tree arbreNom = createInitialTree();
+    addBasesFormesInTree(nom,&arbreNom);
+    tree arbreVerbe = createInitialTree();
+    addBasesFormesInTree(verbe,&arbreVerbe);
+    tree arbreAdjectif = createInitialTree();
+    addBasesFormesInTree(adjective,&arbreAdjectif);
+    tree arbreAdverbe = createInitialTree();
+    addBasesFormesInTree(adverbe,&arbreAdverbe);
+
+    if (modele == 2){
+        //nom-adj-verbe-nom
+        printf("%s-%s-%s-%s\n", generateRandomWord(arbreNom),generateRandomWord(arbreAdjectif),generateRandomWord(arbreVerbe),generateRandomWord(arbreNom));
+    }
+    else {
+        //nom qui verbe verbe nom adjectif
+    }
+}
