@@ -4,15 +4,12 @@
 #include "tree.h"
 #include "menu/menu.h"
 int main() {
-    startMenu();
-    controlStartMenu();
-//    listString test = malloc(sizeof (slistString));
-//    test->head=NULL;
-//    test= getBasesFormesNom("../dictionnaire_non_accentue.txt");
-//    //displayStringList(test);
-//    //displayStringList(test);
-//    tree tree=createInitialTree();
-//    addBasesFormesInTree(test,&tree);
-//    printf("%c",tree.root[18]->children->head->data->data);
-        return 0;
+//    startMenu();
+//    controlStartMenu();
+    listString test = malloc(sizeof (slistString));
+    test->head=NULL;
+    test= getBasesFormesNom("../dictionnaire_non_accentue.txt");
+    displayStringList(test);
+    tree tree=createInitialTree();
+    addBasesFormesInTree(test,&tree);
 }
