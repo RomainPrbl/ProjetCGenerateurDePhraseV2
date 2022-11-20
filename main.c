@@ -1,6 +1,17 @@
 #include <stdio.h>
-
-int main() {
-    printf("Hello, World!\n");
-    return 0;
+#include <stdlib.h>
+#include "display/searchInTxt.h"
+#include "tree.h"
+#include "menu/menu.h"
+int main() {/*
+//    startMenu();
+//    controlStartMenu();
+    listString test = malloc(sizeof (slistString));
+    test->head=NULL;
+    test= getBasesFormesNom("../test.txt");
+    //displayStringList(test);
+    tree tree=createInitialTree();
+    addBasesFormesInTree(test,&tree);*/
+    srand(time(NULL));
+    generateSentence(2);
 }
