@@ -162,7 +162,7 @@ void numberOfWord(node noeud,int* compteur) {
     printf("noeud %c et compteur = %d\n",noeud->data,compteur);
     if (!((noeud->children == NULL) || (noeud)->children->head == NULL)) {
         printf("hey\n");
-        s_cell temp = noeud->children->head;
+        s_cell* temp = noeud->children->head;
         if (noeud->isWord == 1){
             (*compteur)++;
         }
