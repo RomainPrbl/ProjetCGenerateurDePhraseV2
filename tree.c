@@ -137,6 +137,7 @@ s_nodeString* generateRandomWord(tree arbre){
         if(childrensNumberOfaNode(noeud) == -1){
             printf("plus d'enfant et mot non fini");
             generateRandomWord(arbre);
+            free(mot);
         }
         else {
             s_cell *temp = noeud->children->head;
