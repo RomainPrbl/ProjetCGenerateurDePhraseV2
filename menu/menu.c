@@ -110,28 +110,28 @@ void controlListMenu(){
     listString list;
     switch(val){
         case 1:
-            list = getBasesFormesAdverbe("../test.txt");
+            list = getBasesFormesAdverbe("../dictionnaire_non_accentue.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();
             break;
 
         case 2:
-            list = getBasesFormesAdjective("../test.txt");
+            list = getBasesFormesAdjective("../dictionnaire_non_accentue.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();
             break;
 
         case 3:
-            list = getBasesFormesVerbe("../test.txt");
+            list = getBasesFormesVerbe("../dictionnaire_non_accentue.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();
             break;
 
         case 4:
-            list = getBasesFormesAdverbe("../test.txt");
+            list = getBasesFormesAdverbe("../dictionnaire_non_accentue.txt");
             displayStringList(list);
             printf("\n");
             controlListMenu();

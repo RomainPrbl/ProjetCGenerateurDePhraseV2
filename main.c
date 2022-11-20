@@ -3,15 +3,9 @@
 #include "display/searchInTxt.h"
 #include "tree.h"
 #include "menu/menu.h"
-int main() {/*
-//    startMenu();
-//    controlStartMenu();
-    listString test = malloc(sizeof (slistString));
-    test->head=NULL;
-    test= getBasesFormesNom("../test.txt");
-    //displayStringList(test);
-    tree tree=createInitialTree();
-    addBasesFormesInTree(test,&tree);*/
-    srand(time(NULL));
-    generateSentence(2);
+int main() {
+    startMenu();
+    controlStartMenu();
+    // La fonction generateRandomWord(tree) fonctionne partiellement mais pas à 100% donc nous n'avons pas génerer
+    // de phrase
 }
