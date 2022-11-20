@@ -251,7 +251,7 @@ int childrensNumberOfaNode(node noeudParent){
 }
 
 s_nodeString* generateRandomWord(three arbre){
-    //le type de mot generé depant de l'arbre en parametre
+    //le type de mot generé depend de l'arbre en parametre
     s_nodeString * mot = malloc(sizeof (s_nodeString));
     mot->children = NULL;
     int lettreDeDepart = randomNumber(0,25);
@@ -262,7 +262,7 @@ s_nodeString* generateRandomWord(three arbre){
     int nbDeMotDansArbre = numberOfWordInthree(arbre);
     int idMot = numberOfWordInthree(arbre);
     node noeud = arbre.root[lettreDeDepart];
-    while (trouve != 1 ){
+    while (trouve != 1){
         s_cell * temp = noeud->children->head;
         enfantAleatoire = randomNumber(1, childrensNumberOfaNode(noeud));
         while(i < enfantAleatoire){
@@ -270,16 +270,15 @@ s_nodeString* generateRandomWord(three arbre){
             i++;
         }
         mot->data[indexDuMotEnConstruction] = temp->data->data;
-        noeud = temp->data;
         if( (noeud->isWord == 1) && (randomNumber(1,nbDeMotDansArbre) == idMot)){
             trouve = 1;
             mot->data[indexDuMotEnConstruction+1] = '\0';
-        };
+        }
+        noeud = temp->data;
         indexDuMotEnConstruction++;
         i = 1;
-        return mot;
     }
-
+    return mot;
 }
 
 int randomNumber(int min, int max){
