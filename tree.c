@@ -131,8 +131,6 @@ s_nodeString* generateRandomWord(tree arbre){
     int i = 1 ;
     int trouve = 0;
     int indexDuMotEnConstruction = 0;
-    int nbDeMotDansArbre = numberOfWordIntree(arbre);
-    int idMot = numberOfWordIntree(arbre);
     node noeud = arbre.root[lettreDeDepart];
     while (trouve != 1){
         s_cell * temp = noeud->children->head;
@@ -142,7 +140,7 @@ s_nodeString* generateRandomWord(tree arbre){
             i++;
         }
         mot->data[indexDuMotEnConstruction] = temp->data->data;
-        if( (noeud->isWord == 1) && (randomNumber(1,nbDeMotDansArbre) == idMot)){
+        if( (noeud->isWord == 1) && (randomNumber(1,10) == 5)){
             trouve = 1;
             mot->data[indexDuMotEnConstruction+1] = '\0';
         }
@@ -174,7 +172,7 @@ void numberOfWord(node noeud,int* compteur) {
         printf("ce noeud na pas d'enfants ^\n");
     }
 }
-int numberOfWordInthree(tree arbre){
+int numberOfWordIntree(tree arbre){
     int cpt = 26;
     int temp = 0;
     for (int i = 0 ; i < 26 ; i ++){
