@@ -8,7 +8,7 @@ int main() {
 //    controlStartMenu();
     listString test = malloc(sizeof (slistString));
     test->head=NULL;
-    test= getBasesFormesNom("../dictionnaire_non_accentue.txt");
+    test= getBasesFormesNom("../test.txt");
     displayStringList(test);
     tree tree=createInitialTree();
     addBasesFormesInTree(test,&tree);

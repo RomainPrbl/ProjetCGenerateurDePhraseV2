@@ -133,6 +133,11 @@ s_nodeString* generateRandomWord(tree arbre){
     int indexDuMotEnConstruction = 0;
     node noeud = arbre.root[lettreDeDepart];
     while (trouve != 1){
+        // si il a pas d'enfant
+        if(childrensNumberOfaNode(noeud) == -1){
+            printf("plus d'enfant et mot non fini");
+            generateRandomWord(arbre);
+        }
         s_cell * temp = noeud->children->head;
         enfantAleatoire = randomNumber(1, childrensNumberOfaNode(noeud));
         while(i < enfantAleatoire){
