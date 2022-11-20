@@ -122,3 +122,34 @@ void addBasesFormesInTree(listString List,tree *tree){
         }
     }
 }
+s_nodeString* generateRandomWord(three arbre){
+    //le type de mot generé depend de l'arbre en parametre
+    s_nodeString * mot = malloc(sizeof (s_nodeString));
+    mot->children = NULL;
+    int lettreDeDepart = randomNumber(0,25);
+    int enfantAleatoire = 0;
+    int i = 1 ;
+    int trouve = 0;
+    int indexDuMotEnConstruction = 0;
+    int nbDeMotDansArbre = numberOfWordInthree(arbre);
+    int idMot = numberOfWordInthree(arbre);
+    node noeud = arbre.root[lettreDeDepart];
+    while (trouve != 1){
+        s_cell * temp = noeud->children->head;
+        enfantAleatoire = randomNumber(1, childrensNumberOfaNode(noeud));
+        while(i < enfantAleatoire){
+            temp = temp->next;
+            i++;
+        }
+        mot->data[indexDuMotEnConstruction] = temp->data->data;
+        if( (noeud->isWord == 1) && (randomNumber(1,nbDeMotDansArbre) == idMot)){
+            trouve = 1;
+            mot->data[indexDuMotEnConstruction+1] = '\0';
+        }
+        noeud = temp->data;
+        indexDuMotEnConstruction++;
+        i = 1;
+    }
+    return mot;
+}
+

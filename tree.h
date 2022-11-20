@@ -31,5 +31,6 @@ void addBasesFormesInTree(listString List,tree *tree);
 node returnChildrenNodeWithTheCaractereOfANode(node noeud, char caractere);
 int IsWordAlreadyIntree(tree arbre, s_nodeString* noeudMot);
 int CharIsInNodeChildren(char caractere,node noeud);
+s_nodeString* generateRandomWord(three arbre);
 
 #endif //PROJETCGENERATEURDEPHRASEV2_THREE_H
