@@ -124,6 +124,8 @@ void controlListMenu(){
             break;
 
         case 3:
+
+
             list = getBasesFormesVerbe("../dictionnaire_non_accentue.txt");
             displayStringList(list);
             printf("\n");
