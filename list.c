@@ -74,7 +74,6 @@ void addChildrenToNode(node node1,cell cell1) {
 
     list addInListCell(list L, cell cellToAdd) {
         ///WIP
-        printf("cc");
         if (L->head == NULL) {
             L = malloc(sizeof(slist));
             L->head = cellToAdd;
