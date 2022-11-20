@@ -124,7 +124,7 @@ void addBasesFormesInTree(listString List,tree *tree){
 }
 s_nodeString* generateRandomWord(tree arbre){
     //le type de mot generé depend de l'arbre en parametre
-    s_nodeString * mot = malloc(sizeof (s_nodeString));
+    s_nodeString *mot = malloc(sizeof (s_nodeString));
     mot->children = NULL;
     int lettreDeDepart = randomNumber(0,25);
     int enfantAleatoire = 0;

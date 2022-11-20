@@ -9,6 +9,7 @@ int main() {
     //displayStringList(test);
     listString test = malloc(sizeof (slistString));
     test->head=NULL;
+<<<<<<< Updated upstream
     test= getBasesFormesNom("D:/generateurdemot/ProjetCGenerateurDePhraseV2/test.txt");
     //displayStringList(test);
     //displayStringList(test);
@@ -25,5 +26,12 @@ int main() {
     displayStringList(test);
     tree tree = createInitialTree();
     addBasesFormesInTree(test, &tree);
+>>>>>>> Stashed changes
+=======
+    test= getBasesFormesNom("../test.txt");
+    //displayStringList(test);
+    tree tree=createInitialTree();
+    addBasesFormesInTree(test,&tree);
+    printf("%s",generateRandomWord(tree)->data);
 >>>>>>> Stashed changes
 }
