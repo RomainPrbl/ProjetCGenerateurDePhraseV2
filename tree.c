@@ -127,19 +127,24 @@ s_nodeString* generateRandomWord(tree arbre){
     s_nodeString * mot = malloc(sizeof (s_nodeString));
     mot->children = NULL;
     int lettreDeDepart = randomNumber(0,25);
+    printf("index de depart pour root %d\n",lettreDeDepart);
     int enfantAleatoire = 0;
     int i = 1 ;
     int trouve = 0;
-    int indexDuMotEnConstruction = 0;
+    int indexDuMotEnConstruction = 1;
     node noeud = arbre.root[lettreDeDepart];
+    mot->data[0] = noeud->data;
+    printf("premiere de l'arbre : %c\n",noeud->data);
     while (trouve != 1){
         // si il a pas d'enfant
         if(childrensNumberOfaNode(noeud) == -1){
-            printf("plus d'enfant et mot non fini");
+            printf("plus d'enfant et mot non fini\n");
+            printf("-----------------------------\n");
             generateRandomWord(arbre);
-            free(mot);
         }
         else {
+            printf("il y a des enfants\n");
+            printf("IsWorld = %d\n",noeud->isWord);
             s_cell *temp = noeud->children->head;
             enfantAleatoire = randomNumber(1, childrensNumberOfaNode(noeud));
             while (i < enfantAleatoire) {
@@ -147,7 +152,8 @@ s_nodeString* generateRandomWord(tree arbre){
                 i++;
             }
             mot->data[indexDuMotEnConstruction] = temp->data->data;
-            if ((noeud->isWord == 1) && (randomNumber(1, 10) == 5)) {
+            printf("lettre du mot = %c\n",mot->data[indexDuMotEnConstruction]);
+            if (noeud->isWord == 1) { // && (randomNumber(1, 10) == 5)
                 trouve = 1;
                 mot->data[indexDuMotEnConstruction + 1] = '\0';
             }
@@ -160,7 +166,6 @@ s_nodeString* generateRandomWord(tree arbre){
 }
 
 int randomNumber(int min, int max){
-    srand(time(NULL));
     return rand()%(max-min+1) + min;
 }
 
@@ -193,10 +198,15 @@ int numberOfWordIntree(tree arbre){
 
 int childrensNumberOfaNode(node noeudParent){
     int compteurEnfants = 0;
-    if ((noeudParent->children == NULL) || (noeudParent->children->head == NULL)  ){
-        printf("Il n'y a pas d'enfant au noeud ( %c )",noeudParent->data);
+    printf("hey\n");
+    /*if (noeudParent->children == NULL){
+        printf("Il n'y a pas d'enfant");
+        return -1;
+    }else */if ( noeudParent->children->head == NULL){
+        printf("Il n'y a pas d'enfant2\n");
         return -1;
     }
+    printf("hey2\n");
     s_cell* temp = noeudParent->children->head;
     while(temp != NULL){
         compteurEnfants++;

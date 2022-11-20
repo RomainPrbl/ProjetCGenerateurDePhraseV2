@@ -9,7 +9,9 @@ int main() {
     listString test = malloc(sizeof (slistString));
     test->head=NULL;
     test= getBasesFormesNom("../test.txt");
-    displayStringList(test);
+    //displayStringList(test);
     tree tree=createInitialTree();
     addBasesFormesInTree(test,&tree);
+    srand(time(NULL));
+    printf("%s", generateRandomWord(tree)->data);
 }
